@@ -1,25 +1,52 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cherish&family=Imperial+Script&family=Instrument+Serif:ital@0;1&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cherish&family=Imperial+Script&family=Instrument+Serif:ital@0;1&family=Monofett&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     margin: 0;
     font-family:
         -apple-system, BlinkMacSystemFont, "Cherish", "Imperial Script",
-        "Instrument Serif", cursive, "Bebas Neue", "Segoe UI", "Roboto",
-        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-        "Helvetica Neue", sans-serif;
+        "Instrument Serif", "Bebas Neue", "Segoe UI", "Roboto", "Oxygen",
+        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+        "Monofett", monospace, sans-serif, cursive;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 code {
     font-family:
-        source-code-pro,
-        Menlo,
-        Monaco,
-        Consolas,
-        "Courier New",
-        "Cherish",
-        "Bebas Neue",
-        "Imperial Script",
-        "Instrument Serif" monospace;
+        source-code-pro, Menlo, Monaco, Consolas, "Courier New", "Cherish",
+        "Bebas Neue", "Imperial Script", "Instrument Serif", "Monofett",
+        monospace;
+}
+
+a {
+    display: inline-block;
+    position: relative;
+    color: rgba(0, 0, 0, 0.87);
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+a:hover {
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+    transform: translatey(-1px);
+}
+a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 5px;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.87);
+    border-radius: 4px;
+    transition: transform 0.25s ease-out;
+}
+
+a:hover::after {
+    transform: scaleX(1);
+    /* transform-origin: bottom center; */
 }

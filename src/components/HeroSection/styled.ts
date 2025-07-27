@@ -3,30 +3,11 @@ import { Container, Typography, Button, Box } from "@mui/material";
 
 export const HeroContainer = styled(Container)(({ theme }) => ({
   minHeight: "100vh",
+  paddingTop: "60px",
   display: "flex",
   alignItems: "center",
-  paddingTop: "100px",
-  paddingBottom: "50px",
+  justifyContent: "space-between",
 }));
-
-export const HeroContent = styled(Box)({
-  display: "grid",
-  gridTemplateColumns: "1fr 1fr",
-  gap: "60px",
-  alignItems: "center",
-  width: "100%",
-  "@media (max-width: 768px)": {
-    gridTemplateColumns: "1fr",
-    gap: "40px",
-    textAlign: "center",
-  },
-});
-
-export const LeftContent = styled(Box)({
-  display: "flex",
-  flexDirection: "column",
-  gap: "30px",
-});
 
 export const MainTitle = styled(Typography)({
   fontFamily: "Bebas Neue",
@@ -42,11 +23,13 @@ export const MainTitle = styled(Typography)({
 
 export const Subtitle = styled(Typography)({
   fontFamily: "Instrument Serif",
-  fontSize: "2rem",
+  fontSize: "1.8rem",
   fontWeight: 100,
   color: "rgb(31,31,29)",
   lineHeight: "1.1",
   marginBottom: "30px",
+  textAlign: "right",
+  zIndex: 100,
 });
 
 export const ContactButton = styled(Button)({
@@ -69,24 +52,51 @@ export const ContactButton = styled(Button)({
 export const RightContent = styled(Box)({
   display: "flex",
   flexDirection: "column",
-  alignItems: "center",
+  alignItems: "flex-end",
   gap: "40px",
+  maxWidth: "660px",
+});
+
+export const PictureContainer = styled(Box)({
+  position: "relative",
+  maxWidth: "700px",
+  minWidth: "560px",
+  borderRadius: "0 0 0 40px",
+  "&::after": {
+    content: '""',
+    position: "absolute",
+    top: "0",
+    right: "0",
+    width: "30%",
+    height: "50px",
+    background: "rgb(219, 219, 213)",
+    borderRadius: "0 0 0 20px",
+  },
+  "&::before": {
+    content: '""',
+    display: "block",
+    position: "absolute",
+    bottom: "-10px",
+    right: "15px",
+    width: "100%",
+    height: "100%",
+    border: "solid 2px grey",
+    // background: "rgb(29, 219, 213)",
+    borderRadius: "0 0 0 20px",
+    zIndex: 100,
+  },
 });
 
 export const ProfileImage = styled("img")({
-  position: "absolute",
-  top: 0,
-  left: "50%",
-  transform: "translateX(-50%) scaleX(-1)",
-  width: "auto",
-  height: "780px",
-  borderRadius: "0 0 50% 50%",
+  width: "100%",
+  height: "auto",
   objectFit: "cover",
+  filter: "grayscale(100%)",
 
-  "@media (max-width: 768px)": {
-    width: "250px",
-    height: "250px",
-  },
+  // "@media (max-width: 768px)": {
+  //   width: "250px",
+  //   height: "250px",
+  // },
 });
 
 export const StatsContainer = styled(Box)({

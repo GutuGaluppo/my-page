@@ -1,57 +1,54 @@
-import React from 'react';
-import { 
-  PersonOutline, 
-  BrandingWatermark, 
-  DevicesOutlined, 
-  TouchApp 
-} from '@mui/icons-material';
 import {
-  FeaturesContainer,
-  FeaturesGrid,
+  DevicesOutlined,
+  DrawRounded,
+  PedalBikeSharp,
+  TouchApp,
+} from "@mui/icons-material";
+import React from "react";
+import {
   FeatureCard,
-  FeatureTitle,
   FeatureDescription,
   FeatureIcon,
-} from './styled';
+  FeaturesContainer,
+  FeaturesGrid,
+  FeatureTitle,
+} from "./styled";
 
 const features = [
   {
-    icon: <PersonOutline />,
-    title: 'User-Centered Design',
-    description: 'Intuitive and engaging experiences tailored for your audience.',
+    icon: <DrawRounded />,
+    title: "Tattoo",
+    description:
+      "Intuitive and engaging experiences tailored for your audience.",
   },
   {
-    icon: <BrandingWatermark />,
-    title: 'Brand Identity & Strategy',
-    description: 'Strong visual storytelling that makes your brand unforgettable.',
+    icon: <PedalBikeSharp />,
+    title: "Brand Identity & Strategy",
+    description:
+      "Strong visual storytelling that makes your brand unforgettable.",
   },
   {
     icon: <DevicesOutlined />,
-    title: 'Responsive & Modern UI',
-    description: 'Pixel-perfect designs optimized for all devices.',
+    title: "Responsive & Modern UI",
+    description: "Pixel-perfect designs optimized for all devices.",
   },
   {
     icon: <TouchApp />,
-    title: 'Seamless Prototyping',
-    description: 'Interactive mockups to bring ideas to life before development.',
+    title: "Seamless Prototyping",
+    description:
+      "Interactive mockups to bring ideas to life before development.",
   },
 ];
 
 const FeaturesSection: React.FC = () => {
   return (
-    <FeaturesContainer maxWidth="lg">
+    <FeaturesContainer maxWidth="lg" id="aboutme">
       <FeaturesGrid>
         {features.map((feature, index) => (
           <FeatureCard key={index}>
-            <FeatureIcon>
-              {feature.icon}
-            </FeatureIcon>
-            <FeatureTitle>
-              {feature.title}
-            </FeatureTitle>
-            <FeatureDescription>
-              {feature.description}
-            </FeatureDescription>
+            <FeatureIcon>{feature.icon}</FeatureIcon>
+            <FeatureTitle>{feature.title}</FeatureTitle>
+            <FeatureDescription>{feature.description}</FeatureDescription>
           </FeatureCard>
         ))}
       </FeaturesGrid>
@@ -60,4 +57,3 @@ const FeaturesSection: React.FC = () => {
 };
 
 export default FeaturesSection;
-

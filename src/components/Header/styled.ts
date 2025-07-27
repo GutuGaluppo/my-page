@@ -9,14 +9,14 @@ import {
 import { styled } from "@mui/material/styles";
 
 export const StyledAppBar = styled(AppBar)(({ theme }) => ({
-  backgroundColor: "transparent",
+  backgroundColor: theme.palette.background.default,
   boxShadow: "none",
   position: "fixed",
   top: 0,
   left: 0,
   right: 0,
   zIndex: 1100,
-  padding: "20px 40px",
+  padding: "10px 30px",
 }));
 
 export const StyledToolbar = styled(Toolbar)({
@@ -25,12 +25,12 @@ export const StyledToolbar = styled(Toolbar)({
   alignItems: "center",
   minHeight: "auto",
   padding: 0,
+  color: "#333",
 });
 
 export const Logo = styled(Typography)({
   fontWeight: "bold",
   fontSize: "18px",
-  color: "#3B82F6",
   textDecoration: "none",
   fontFamily: "Arial, sans-serif",
 });

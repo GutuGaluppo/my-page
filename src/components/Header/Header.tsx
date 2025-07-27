@@ -1,34 +1,48 @@
-import { Menu } from "@mui/icons-material";
-import { Box, MenuItem } from "@mui/material";
-import React, { useState } from "react";
-import ExpandableMenu from "../ExpandableMenu";
-import {
-  Logo,
-  MenuBox,
-  MenuButton,
-  StyledAppBar,
-  StyledToolbar,
-} from "./styled";
+import React from "react";
+import { Box, Typography } from "@mui/material";
+import { Logo, StyledAppBar, StyledToolbar } from "./styled";
+import LogoGutu from "./LogoGutu";
 
 const Header: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <StyledAppBar>
       <StyledToolbar>
-        <Logo variant="h6">GUTU GALUPPO</Logo>
-        {/* <MenuBox isOpen={isOpen} onClick={() => setIsOpen(!isOpen)}>
-          <MenuButton onClick={() => setIsOpen(!isOpen)}>
-            Menu
-            <Menu />
-          </MenuButton>
-          <Box sx={{ opacity: isOpen ? 1 : 0, transition: "opacity 0.3s" }}>
-            <MenuItem onClick={() => setIsOpen(false)}>Work</MenuItem>
-            <MenuItem onClick={() => setIsOpen(false)}>About Me</MenuItem>
-            <MenuItem onClick={() => setIsOpen(false)}>Contact</MenuItem>
-          </Box>
-        </MenuBox> */}
-        <ExpandableMenu />
+        <a href="#home">
+          <LogoGutu />
+        </a>
+        <Box>
+          <Typography
+            sx={{
+              fontFamily: "Bebas Neue",
+              fontSize: "1.5rem",
+            }}
+          >
+            Based in Berlin - Germany
+          </Typography>
+        </Box>
+        <Box>
+          <Typography
+            sx={{
+              fontFamily: "Bebas Neue",
+              fontSize: "1.5rem",
+            }}
+          >
+            Currently available for new projects
+          </Typography>
+        </Box>
+        <Box>
+          <Typography
+            sx={{
+              fontFamily: "Bebas Neue",
+              fontSize: "1.5rem",
+            }}
+          >
+            Check more <a href="#aboutme">About Me</a>,{" "}
+            <a href="#skills">Skills</a>, <a href="#experience">Experience</a>,{" "}
+            <a href="#contact">Contact</a>, and my{" "}
+            <a href="#hobbies">Hobbies</a>
+          </Typography>
+        </Box>
       </StyledToolbar>
     </StyledAppBar>
   );
