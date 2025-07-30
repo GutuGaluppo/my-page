@@ -1,11 +1,11 @@
-import { Skateboarding } from "@mui/icons-material";
 import CssBaseline from "@mui/material/CssBaseline";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Experience from "./components/Experience";
-import FeaturesSection from "./components/FeaturesSection";
 import Footer from "./components/Footer";
+import Form from "./components/Form";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
+import Quotes from "./components/Quotes";
 import SkillSphere from "./components/SkillSphere";
 
 const theme = createTheme({
@@ -34,8 +34,9 @@ function App() {
         <Header />
         <HeroSection />
         <Experience />
-        {/* <FeaturesSection /> */}
         <SkillSphere widthVw={900} heightVh={600} />
+        <Form />
+        <Quotes />
         <Footer />
       </div>
     </ThemeProvider>

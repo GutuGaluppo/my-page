@@ -10,6 +10,9 @@ const LogoGutu = () => {
           fontWeight: 300,
           "&:hover": {
             cursor: "pointer",
+            color: "rgba(0, 0, 0, 0.6)",
+            transform: "scale(1.1)",
+            transition: "all 0.6s ease-in-out",
           },
         }}
       >

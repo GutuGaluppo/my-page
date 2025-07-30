@@ -1,4 +1,5 @@
 import { Box, styled } from "@mui/material";
+import pattern from "../../assets/images/pattern04.svg";
 
 export const StyledExperience = styled(Box)({
   display: "flex",
@@ -6,7 +7,7 @@ export const StyledExperience = styled(Box)({
   justifyContent: "center",
   flexWrap: "wrap",
   margin: "0 auto",
-  paddingTop: "60px",
+  paddingTop: "160px",
   gap: "2rem",
 });
 
@@ -34,11 +35,11 @@ export const OuterBox = styled(Box)<OuterBoxProps>(({ period }) => ({
     content: `'${period}'`,
     position: "absolute",
     fontFamily: "Courier New",
-    fontSize: "16px",
+    fontSize: "18px",
+    fontWeight: "bold",
     top: "50%",
     left: "-23%",
     padding: "0px 10px",
-    width: "200px",
     height: "min-content",
     textAlign: "center",
     background: "rgb(219, 219, 213)",
@@ -60,6 +61,19 @@ export const StyledExperienceItem = styled(Box)<OuterBoxProps>(
     height: "550px",
     background: "linear-gradient(135deg, #f0f0f0 80%, rgb(219, 219, 213) 100%)",
     borderRadius: "10px",
+    "&::before": {
+      content: `''`,
+      position: "absolute",
+      top: "0",
+      left: "0",
+      width: "100%",
+      height: "100%",
+      textAlign: "center",
+      backgroundImage: `url(${pattern})`,
+      opacity: 0.07,
+      borderRadius: "10px 10px 0 0",
+      zIndex: 101,
+    },
     "&::after": {
       content: `'${company}'`,
       position: "absolute",
