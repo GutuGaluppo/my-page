@@ -1,6 +1,3 @@
-import placeholder from "../../assets/images/placeholder_pic.png";
-import placeholder02 from "../../assets/images/placeholder02_pic.png";
-import placeholder03 from "../../assets/images/placeholder03_pic.png";
 import antonios from "../../assets/images/quoteSection/Antonios02.png";
 import lem from "../../assets/images/quoteSection/Lem03.jpg";
 import igor from "../../assets/images/quoteSection/IgorBG.png";
