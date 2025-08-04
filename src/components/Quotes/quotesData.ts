@@ -36,20 +36,4 @@ export const quotesData: Quote[] = [
       Ele não apenas implementa, mas também melhora a visão do design com sugestões valiosas.
       A atenção que ele dá à acessibilidade faz toda a diferença!”`,
 	},
-	// {
-	// 	picture: placeholder02,
-	// 	collegueName: "Hugo Nogueira",
-	// 	company: "Tilda",
-	// 	description: `“A colaboração com Gutu sempre flui naturalmente.
-	//   Ele entende as limitações técnicas do backend e propõe soluções inteligentes no frontend. Além disso, seu código é limpo, bem documentado e fácil de manter.
-	//   Um verdadeiro parceiro de equipe!”`,
-	// },
-	// {
-	// 	picture: placeholder03,
-	// 	collegueName: "Feli",
-	// 	company: "Super Vista",
-	// 	description: `“Gutu tem uma sensibilidade única para transformar protótipos em experiências reais.
-	//   Ele não apenas implementa, mas também melhora a visão do design com sugestões valiosas.
-	//   A atenção que ele dá à acessibilidade faz toda a diferença!”`,
-	// },
 ];
