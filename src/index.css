@@ -30,10 +30,12 @@ a {
     transition: all 0.2s ease-in-out;
 }
 a:hover {
-    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
-    transform: translatey(-1px);
+    color: white;
+    text-shadow: 1px -1px 0px rgba(0, 0, 0, 0.4);
+    /*text-shadow: 1px -10px 0px rgba(0, 0, 0, 0.1);*/
+    /*transform: translatey(1px);*/
 }
-a::after {
+/*a::after {
     content: "";
     position: absolute;
     width: 100%;
@@ -44,7 +46,7 @@ a::after {
     background-color: rgba(0, 0, 0, 0.87);
     border-radius: 4px;
     transition: transform 0.25s ease-out;
-}
+}*/
 
 a:hover::after {
     transform: scaleX(1);

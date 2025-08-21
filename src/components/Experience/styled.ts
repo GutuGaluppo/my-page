@@ -1,4 +1,5 @@
 import { Box, styled } from "@mui/material";
+import { Parallax } from "react-scroll-parallax";
 import pattern from "../../assets/images/pattern04.svg";
 
 export const StyledExperience = styled(Box)({
@@ -16,20 +17,20 @@ type OuterBoxProps = {
   period?: string;
 };
 
-export const OuterBox = styled(Box)<OuterBoxProps>(({ period }) => ({
+export const OuterBox = styled(Parallax)<OuterBoxProps>(({ period }) => ({
   position: "relative",
   fontFamily: "Bebas Neue",
   fontSize: "20px",
   "&::before": {
     content: '""',
     position: "absolute",
-    // top: "35px",
+    top: "-15px",
     left: "0",
     width: "400px",
     height: "550px",
     border: "2px solid grey",
-    zIndex: 10,
     borderRadius: "10px",
+    zIndex: 10,
   },
   "&::after": {
     content: `'${period}'`,

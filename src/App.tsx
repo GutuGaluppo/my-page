@@ -1,12 +1,12 @@
 import CssBaseline from "@mui/material/CssBaseline";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { ParallaxProvider } from "react-scroll-parallax";
 import Experience from "./components/Experience";
 import Footer from "./components/Footer";
 import Form from "./components/Form";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import Quotes from "./components/Quotes";
-import SkillSphere from "./components/SkillSphere";
 
 const theme = createTheme({
   typography: {
@@ -28,18 +28,19 @@ const theme = createTheme({
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <div className="App">
-        <Header />
-        <HeroSection />
-        <Experience />
-        <SkillSphere widthVw={900} heightVh={600} />
-        <Form />
-        <Quotes />
-        <Footer />
-      </div>
-    </ThemeProvider>
+    <ParallaxProvider>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <div className="App">
+          <Header />
+          <HeroSection />
+          <Experience />
+          <Quotes />
+          <Form />
+          <Footer />
+        </div>
+      </ThemeProvider>
+    </ParallaxProvider>
   );
 }
 

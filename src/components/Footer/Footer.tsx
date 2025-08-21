@@ -1,4 +1,3 @@
-import React from "react";
 import { Container, Typography, Box, IconButton, Divider } from "@mui/material";
 import { LinkedIn, GitHub, Email } from "@mui/icons-material";
 import { FooterSection, FooterContent, SocialLinks, Copyright } from "./styled";

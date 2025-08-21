@@ -11,11 +11,11 @@ import { styled } from "@mui/material/styles";
 export const StyledAppBar = styled(AppBar)(({ theme }) => ({
   backgroundColor: theme.palette.background.default,
   boxShadow: "none",
-  position: "fixed",
-  top: 0,
-  left: 0,
-  right: 0,
-  zIndex: 1100,
+  position: "static",
+  // top: 0,
+  // left: 0,
+  // right: 0,
+  // zIndex: 1100,
   padding: "10px 30px",
 }));
 
@@ -29,10 +29,15 @@ export const StyledToolbar = styled(Toolbar)({
 });
 
 export const Logo = styled(Typography)({
-  fontWeight: "bold",
-  fontSize: "18px",
-  textDecoration: "none",
-  fontFamily: "Arial, sans-serif",
+  fontFamily: "Monofett",
+  fontWeight: 300,
+  "&:hover": {
+    cursor: "pointer",
+
+    // color: "rgba(0, 0, 0, 0.6)",
+    transform: "scale(1.1)",
+    transition: "all 0.6s ease-in-out",
+  },
 });
 
 export const MenuButton = styled(IconButton)({

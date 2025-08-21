@@ -1,117 +1,121 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import pattern from "../../assets/images/pattern04.svg";
 
-export const QuotesContainer = styled(Container)({
-	margin: "0 auto",
-	padding: "160px 0",
+export const QuotesContainer = styled(Box)({
+  position: "relative",
+  width: "100%",
+  minHeight: "100vh",
 });
 
 export const QuotesGrid = styled(Box)({
-	display: "flex",
-	flexWrap: "wrap",
-	alignItems: "center",
-	justifyContent: "center",
-	gap: "30px",
+  position: "relative",
+  height: "100%",
+  padding: "0 0 0 150px",
+  display: "flex",
+  flexDirection: "row",
+  alignItems: "center",
+  gap: "30px",
+  minWidth: "max-content",
 });
 
 type BoxProps = {
-	name?: string;
-	period?: string;
-	isEven?: boolean;
+  name?: string;
+  period?: string;
+  isEven?: boolean;
 };
 
 export const BorderBox = styled(Box)<BoxProps>(({ isEven }) => ({
-	position: "relative",
-	fontFamily: "Bebas Neue",
-	fontSize: "20px",
-	"&::before": {
-		content: '""',
-		position: "absolute",
-		top: isEven ? "10px" : "5px",
-		left: "5px",
-		width: "500px",
-		height: "350px",
-		border: "3px grey",
-		borderStyle: "double",
-		zIndex: 10,
-		borderRadius: "10px",
-	},
+  position: "relative",
+  fontFamily: "Bebas Neue",
+  fontSize: "20px",
+  "&::before": {
+    content: '""',
+    position: "absolute",
+    top: isEven ? "10px" : "5px",
+    left: "5px",
+    width: "600px",
+    height: "350px",
+    border: "3px grey",
+    borderStyle: "double",
+    zIndex: 10,
+    borderRadius: "10px",
+  },
 }));
 
 export const QuoteCard = styled(Box)<BoxProps>({
-	position: "relative",
-	display: "flex",
-	flexDirection: "column",
-	alignItems: "flex-start",
-	justifyContent: "space-evenly",
-	padding: "1.5rem",
-	margin: "1rem",
-	width: "500px",
-	height: "350px",
-	background: "linear-gradient(135deg, #f0f0f0 80%, rgb(219, 219, 213) 100%)",
-	borderRadius: "10px",
-	"&::before": {
-		content: `''`,
-		position: "absolute",
-		top: "0",
-		left: "0",
-		width: "100%",
-		height: "100%",
-		textAlign: "center",
-		backgroundImage: `url(${pattern})`,
-		opacity: 0.07,
-		borderRadius: "10px 10px 0 0",
-		zIndex: 101,
-	},
-	"&::after": {
-		content: `''`,
-		position: "absolute",
-		fontFamily: "Bebas Neue",
-		fontSize: "28px",
-		lineHeight: "0.8",
-		top: "-9%",
-		left: "50px",
-		padding: "0px 10px",
-		height: "min-content",
-		textAlign: "center",
-		background: "rgb(219, 219, 213)",
-		borderRadius: "10px 10px 0 0",
-		zIndex: 101,
-	},
+  position: "relative",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "flex-start",
+  justifyContent: "space-evenly",
+  padding: "1.5rem",
+  margin: "1rem",
+  width: "600px",
+  height: "350px",
+  background: "linear-gradient(135deg, #f0f0f0 80%, rgb(219, 219, 213) 100%)",
+  borderRadius: "10px",
+  "&::before": {
+    content: `''`,
+    position: "absolute",
+    top: "0",
+    left: "0",
+    width: "100%",
+    height: "100%",
+    textAlign: "center",
+    backgroundImage: `url(${pattern})`,
+    opacity: 0.07,
+    borderRadius: "10px 10px 0 0",
+    zIndex: 101,
+  },
+  "&::after": {
+    content: `''`,
+    position: "absolute",
+    fontFamily: "Bebas Neue",
+    fontSize: "28px",
+    lineHeight: "0.8",
+    top: "-9%",
+    left: "50px",
+    padding: "0px 10px",
+    height: "min-content",
+    textAlign: "center",
+    background: "rgb(219, 219, 213)",
+    borderRadius: "10px 10px 0 0",
+    zIndex: 101,
+  },
 });
 
 export const QuoteTitle = styled(Typography)({
-	fontFamily: "Bebas Neue",
-	fontSize: "1.5rem",
-	fontWeight: "600",
-	color: "#1F2937",
+  fontFamily: "Bebas Neue",
+  fontSize: "1.5rem",
+  fontWeight: "600",
+  color: "#1F2937",
 });
 
 export const QuoteCompany = styled(Typography)({
-	fontFamily: "Instrument Serif",
-	// fontStyle: "italic",
-	fontSize: "1.2rem",
-	fontWeight: "600",
-	color: "#1F2937",
-	alignSelf: "flex-end",
+  fontFamily: "Instrument Serif",
+  // fontStyle: "italic",
+  fontSize: "1.2rem",
+  fontWeight: "600",
+  color: "#1F2937",
+  alignSelf: "flex-end",
 });
 
 export const QuoteDescription = styled(Typography)({
-	marginTop: "10px",
-	fontSize: "1rem",
-	color: "#6B7280",
-	lineHeight: "1.6",
+  marginTop: "10px",
+  fontSize: "1rem",
+  color: "#6B7280",
+  lineHeight: "1.6",
 });
 
 export const QuoteIcon = styled(Box)({
-	position: "absolute",
-	top: "10px",
-	right: "20px",
-	filter: "grayscale(100%)",
-	opacity: 0.6,
-	"& svg": {
-		fontSize: "8rem",
-		color: "#3B82F6",
-	},
+  position: "absolute",
+  top: "10px",
+  right: "20px",
+  filter: "grayscale(100%)",
+  opacity: 0.6,
+  "& svg": {
+    fontSize: "8rem",
+    color: "#3B82F6",
+  },
 });

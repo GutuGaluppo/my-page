@@ -1,39 +1,47 @@
 import antonios from "../../assets/images/quoteSection/Antonios02.png";
 import lem from "../../assets/images/quoteSection/Lem03.jpg";
 import igor from "../../assets/images/quoteSection/IgorBG.png";
+import feli from "../../assets/images/quoteSection/FeliBG.jpg";
 
 interface Quote {
-	picture: string;
-	collegueName: string;
-	company: string;
-	description: string;
+  picture: string;
+  collegueName: string;
+  company: string;
+  description: string;
 }
 
 export const quotesData: Quote[] = [
-	{
-		picture: antonios,
-		collegueName: "Antonios Kolovos",
-		company: "Loudly",
-		description: `“Augusto is a detail-oriented team member who consistently suggests improvements that enhances our project.
+  {
+    picture: antonios,
+    collegueName: "Antonios Kolovos",
+    company: "Loudly",
+    description: `“Augusto is a detail-oriented team member who consistently suggests improvements that enhances our project.
     His positive energy and strong collaboration skills create a great working environment,
     and his contributions have a big impact on our product.
     He is also eager to learn new technologies, which helps drive innovation within the team.”`,
-	},
-	{
-		picture: lem,
-		collegueName: "Mateusz Lamczyk",
-		company: "Loudly",
-		description: `“Augusto is a detail-oriented team member who consistently suggests improvements that enhances our project.
-    His positive energy and strong collaboration skills create a great working environment,
-    and his contributions have a big impact on our product.
-    He is also eager to learn new technologies, which helps drive innovation within the team.”`,
-	},
-	{
-		picture: igor,
-		collegueName: "Igor Santos",
-		company: "Super Vista",
-		description: `“Gutu tem uma sensibilidade única para transformar protótipos em experiências reais.
+  },
+  {
+    picture: lem,
+    collegueName: "Mateusz Lamczyk",
+    company: "Loudly",
+    description: `“Augusto has a great eye for detail and consistently delivers polished, responsive UIs using React and CSS.
+    He’s not only technically strong but also a dependable team player who’s always ready to help.
+    A real asset to any frontend team.”`,
+  },
+  {
+    picture: igor,
+    collegueName: "Igor Santos",
+    company: "Super Vista",
+    description: `“Gutu tem uma sensibilidade única para transformar protótipos em experiências reais.
       Ele não apenas implementa, mas também melhora a visão do design com sugestões valiosas.
       A atenção que ele dá à acessibilidade faz toda a diferença!”`,
-	},
+  },
+  {
+    picture: feli,
+    collegueName: "Felicitas Deutges",
+    company: "Super Vista",
+    description: `“Gutu tem uma sensibilidade única para transformar protótipos em experiências reais.
+      Ele não apenas implementa, mas também melhora a visão do design com sugestões valiosas.
+      A atenção que ele dá à acessibilidade faz toda a diferença!”`,
+  },
 ];

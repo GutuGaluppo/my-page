@@ -1,5 +1,4 @@
 import { Box, Button, Card, Container, styled } from "@mui/material";
-import pattern from "../../assets/images/pattern04.svg";
 
 export const StyledContainer = styled(Container)({
   paddingBlock: "160px",
