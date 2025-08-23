@@ -44,7 +44,7 @@ const HorizontalScrollContainer: React.FC<HorizontalScrollContainerProps> = ({
   children,
 }) => {
   const [dynamicHeight, setDynamicHeight] = useState<number | null>(null);
-  const [translateX, setTranslateX] = useState<number>(0);
+  const [translateX, setTranslateX] = useState<number>(30);
 
   const containerRef = useRef<HTMLDivElement>(null);
   const objectRef = useRef<HTMLDivElement>(null);

@@ -9,11 +9,13 @@ interface HorizontalTranslateContainerProps {
   translateX: number;
 }
 
-export const TallOuterContainer = styled(Box)<TallOuterContainerProps>(({ dynamicHeight }) => ({
-  position: "relative",
-  width: "100%",
-  height: dynamicHeight ? `${dynamicHeight}px` : "auto",
-}));
+export const TallOuterContainer = styled(Box)<TallOuterContainerProps>(
+  ({ dynamicHeight }) => ({
+    position: "relative",
+    width: "100%",
+    height: dynamicHeight ? `${dynamicHeight}px` : "auto",
+  }),
+);
 
 export const StickyInnerContainer = styled(Box)({
   position: "sticky",
@@ -23,9 +25,12 @@ export const StickyInnerContainer = styled(Box)({
   overflowX: "hidden",
 });
 
-export const HorizontalTranslateContainer = styled(Box)<HorizontalTranslateContainerProps>(({ translateX }) => ({
+export const HorizontalTranslateContainer = styled(
+  Box,
+)<HorizontalTranslateContainerProps>(({ translateX }) => ({
   position: "absolute",
   height: "100%",
+  // marginBlock: "-200px",
   willChange: "transform",
   transform: `translateX(${translateX}px)`,
 }));

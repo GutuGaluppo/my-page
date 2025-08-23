@@ -6,6 +6,11 @@ export const QuotesContainer = styled(Box)({
   position: "relative",
   width: "100%",
   minHeight: "100vh",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+  paddingTop: "150px",
 });
 
 export const QuotesGrid = styled(Box)({
@@ -25,10 +30,9 @@ type BoxProps = {
   isEven?: boolean;
 };
 
-export const BorderBox = styled(Box)<BoxProps>(({ isEven }) => ({
+export const BorderBox = styled(Box)<BoxProps>(({ isEven, theme }) => ({
   position: "relative",
-  fontFamily: "Bebas Neue",
-  fontSize: "20px",
+  ...theme.typography.cardTitle,
   "&::before": {
     content: '""',
     position: "absolute",
@@ -39,11 +43,11 @@ export const BorderBox = styled(Box)<BoxProps>(({ isEven }) => ({
     border: "3px grey",
     borderStyle: "double",
     zIndex: 10,
-    borderRadius: "10px",
+    borderRadius: theme.borders.radius.small,
   },
 }));
 
-export const QuoteCard = styled(Box)<BoxProps>({
+export const QuoteCard = styled(Box)<BoxProps>(({ theme }) => ({
   position: "relative",
   display: "flex",
   flexDirection: "column",
@@ -53,8 +57,8 @@ export const QuoteCard = styled(Box)<BoxProps>({
   margin: "1rem",
   width: "600px",
   height: "350px",
-  background: "linear-gradient(135deg, #f0f0f0 80%, rgb(219, 219, 213) 100%)",
-  borderRadius: "10px",
+  background: theme.gradients.card,
+  borderRadius: theme.borders.radius.small,
   "&::before": {
     content: `''`,
     position: "absolute",
@@ -71,44 +75,39 @@ export const QuoteCard = styled(Box)<BoxProps>({
   "&::after": {
     content: `''`,
     position: "absolute",
-    fontFamily: "Bebas Neue",
-    fontSize: "28px",
-    lineHeight: "0.8",
+    ...theme.typography.sectionTitle,
     top: "-9%",
     left: "50px",
     padding: "0px 10px",
     height: "min-content",
     textAlign: "center",
-    background: "rgb(219, 219, 213)",
+    background: theme.palette.background.default,
     borderRadius: "10px 10px 0 0",
     zIndex: 101,
   },
-});
+}));
 
-export const QuoteTitle = styled(Typography)({
-  fontFamily: "Bebas Neue",
-  fontSize: "1.5rem",
-  fontWeight: "600",
-  color: "#1F2937",
-});
+export const QuoteTitle = styled(Typography)(({ theme }) => ({
+  ...theme.typography.cardTitle,
+  color: theme.palette.neutral[800],
+}));
 
-export const QuoteCompany = styled(Typography)({
-  fontFamily: "Instrument Serif",
-  // fontStyle: "italic",
+export const QuoteCompany = styled(Typography)(({ theme }) => ({
+  ...theme.typography.heroSubtitle,
   fontSize: "1.2rem",
   fontWeight: "600",
-  color: "#1F2937",
+  color: theme.palette.neutral[800],
   alignSelf: "flex-end",
-});
+}));
 
-export const QuoteDescription = styled(Typography)({
+export const QuoteDescription = styled(Typography)(({ theme }) => ({
   marginTop: "10px",
   fontSize: "1rem",
-  color: "#6B7280",
+  color: theme.palette.text.secondary,
   lineHeight: "1.6",
-});
+}));
 
-export const QuoteIcon = styled(Box)({
+export const QuoteIcon = styled(Box)(({ theme }) => ({
   position: "absolute",
   top: "10px",
   right: "20px",
@@ -116,6 +115,6 @@ export const QuoteIcon = styled(Box)({
   opacity: 0.6,
   "& svg": {
     fontSize: "8rem",
-    color: "#3B82F6",
+    color: theme.palette.primary.main,
   },
-});
+}));

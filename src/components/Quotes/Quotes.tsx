@@ -1,6 +1,7 @@
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 import { quotesData } from "./quotesData";
 import HorizontalScrollContainer from "./HorizontalScrollContainer";
+import SectionTitle from "../SectionTitle";
 import {
   BorderBox,
   QuoteCard,
@@ -15,6 +16,7 @@ import {
 const Quotes: React.FC = () => {
   return (
     <QuotesContainer id="aboutme">
+      <SectionTitle title="About Me" />
       <HorizontalScrollContainer>
         <QuotesGrid>
           {quotesData.map((quote, index) => {
