@@ -24,8 +24,12 @@ const HeroSection: React.FC = () => {
   return (
     <HeroContainer maxWidth="lg" id="home">
       <Box>
-        <Gutu variant="h1">gutu</Gutu>
-        <Galuppo variant="h1">galuppo</Galuppo>
+        <Gutu variant="h1" data-outline="gutu">
+          gutu
+        </Gutu>
+        <Galuppo variant="h1" data-outline="galuppo">
+          galuppo
+        </Galuppo>
         <PictureContainer>
           <ProfileImage src={profilePic} alt="Solt - UI/UX Designer" />
           <StyledImageText variant="h3">software engineer</StyledImageText>

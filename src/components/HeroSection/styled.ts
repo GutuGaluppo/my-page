@@ -1,75 +1,60 @@
+import { Box, Container, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { Container, Typography, Button, Box } from "@mui/material";
 
 export const HeroContainer = styled(Container)(({ theme }) => ({
   minHeight: "100vh",
-  paddingTop: "60px",
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
 }));
 
-export const Gutu = styled(Typography)({
-  fontFamily: "Bebas Neue",
-  fontStyle: "italic",
-  fontWeight: "100",
-  fontSize: "9vw",
-  lineHeight: "0.5",
-  "@media (max-width: 768px)": {
-    fontSize: "2.5rem",
+export const Gutu = styled(Typography)(({ theme }) => ({
+  ...theme.typography.heroTitle,
+  position: "relative",
+  marginBottom: "25px",
+  color: "transparent",
+  fontSize: "clamp(50px, 140px, 180px)",
+  "&::after": {
+    content: "attr(data-outline)",
+    position: "absolute",
+    inset: "0 0 0 0",
+    "-webkit-text-fill-color": "transparent",
+    "-webkit-text-stroke-width": "2px",
+    "-webkit-text-stroke-color": "black",
+    zIndex: 3,
   },
-});
+}));
 
-export const Galuppo = styled(Typography)({
-  fontFamily: "Bebas Neue",
-  fontStyle: "italic",
-  fontWeight: "100",
+export const Galuppo = styled(Typography)(({ theme }) => ({
+  ...theme.typography.heroTitle,
+  position: "relative",
   fontSize: "clamp(70px, 250px, 250px)",
-  lineHeight: "0.5",
   color: "grey",
-});
+  "&::after": {
+    content: "attr(data-outline)",
+    position: "absolute",
+    inset: "0 0 0 0",
+    "-webkit-text-fill-color": "transparent",
+    "-webkit-text-stroke-width": "2px",
+    "-webkit-text-stroke-color": theme.palette.background.default,
+    zIndex: 2,
+  },
+}));
 
-export const Subtitle = styled(Typography)({
-  fontFamily: "Instrument Serif",
-  fontSize: "1.8rem",
-  fontWeight: 100,
-  color: "rgb(31,31,29)",
-  lineHeight: "1.1",
+export const Subtitle = styled(Typography)(({ theme }) => ({
+  ...theme.typography.heroSubtitle,
+  color: theme.palette.text.primary,
   marginTop: "20px",
   textAlign: "right",
   zIndex: 100,
-});
+}));
 
-export const PictureContainer = styled(Box)({
+export const PictureContainer = styled(Box)(({ theme }) => ({
   position: "relative",
   maxWidth: "700px",
   minWidth: "560px",
   borderRadius: "0 0 0 40px",
-  // "&::after": {
-  //   content: '""',
-  //   position: "absolute",
-  //   top: "0",
-  //   right: "0",
-  //   width: "40%",
-  //   height: "50px",
-  //   background: "rgb(219, 219, 213)",
-  //   borderRadius: "0 0 0 20px",
-  // },
-  "&::before": {
-    content: '""',
-    display: "block",
-    position: "absolute",
-    bottom: "-10px",
-    right: "15px",
-    width: "100%",
-    height: "100%",
-    border: "solid 2px rgb(255,81, 46, 0.8)",
-    mixBlendMode: "multiply",
-    // background: "rgb(255,81, 46, 0.8)",
-    borderRadius: "0 0 0 20px",
-    zIndex: 100,
-  },
-});
+}));
 
 export const ProfileImage = styled("img")({
   position: "relative",
@@ -84,17 +69,18 @@ export const ProfileImage = styled("img")({
   // },
 });
 
-export const StyledImageText = styled(Typography)({
-  fontFamily: "Bebas Neue",
+export const StyledImageText = styled(Typography)(({ theme }) => ({
   position: "absolute",
   bottom: "-15px",
   left: "0px",
+  fontFamily: "Bebas Neue",
+  fontSize: "3.2rem",
   fontWeight: 700,
   letterSpacing: "-1px",
-  background: `linear-gradient(rgb(219, 219, 213) 65%, transparent 65%)`,
+  background: theme.gradients.subtle,
   backgroundClip: "text",
   textFillColor: "transparent",
-});
+}));
 
 export const RightContent = styled(Box)({
   display: "flex",

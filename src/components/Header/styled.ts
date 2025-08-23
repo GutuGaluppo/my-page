@@ -12,49 +12,41 @@ export const StyledAppBar = styled(AppBar)(({ theme }) => ({
   backgroundColor: theme.palette.background.default,
   boxShadow: "none",
   position: "static",
-  // top: 0,
-  // left: 0,
-  // right: 0,
-  // zIndex: 1100,
   padding: "10px 30px",
 }));
 
-export const StyledToolbar = styled(Toolbar)({
+export const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
   minHeight: "auto",
   padding: 0,
-  color: "#333",
-});
+  color: theme.palette.neutral[800],
+}));
 
-export const Logo = styled(Typography)({
-  fontFamily: "Monofett",
-  fontWeight: 300,
+export const Logo = styled(Typography)(({ theme }) => ({
+  ...theme.typography.logoMono,
   "&:hover": {
     cursor: "pointer",
-
-    // color: "rgba(0, 0, 0, 0.6)",
     transform: "scale(1.1)",
     transition: "all 0.6s ease-in-out",
   },
-});
+}));
 
-export const MenuButton = styled(IconButton)({
+export const MenuButton = styled(IconButton)(({ theme }) => ({
   position: "absolute",
   top: 0,
   right: 0,
-
-  backgroundColor: "#1F2937",
+  backgroundColor: theme.palette.neutral[800],
   color: "white",
-  borderRadius: "25px",
+  borderRadius: theme.borders.radius.large,
   padding: "12px 20px",
   fontSize: "14px",
   fontWeight: "500",
   "&:hover": {
-    backgroundColor: "#374151",
+    backgroundColor: theme.palette.neutral[700],
   },
-});
+}));
 
 type Props = {
   isOpen: boolean;
@@ -62,11 +54,11 @@ type Props = {
 
 export const MenuBox = styled(Box, {
   shouldForwardProp: (prop) => prop !== "isOpen",
-})<Props>(({ isOpen }) => ({
+})<Props>(({ isOpen, theme }) => ({
   position: "relative",
-  backgroundColor: "#1F2937",
+  backgroundColor: theme.palette.neutral[800],
   color: "white",
-  borderRadius: "25px",
+  borderRadius: theme.borders.radius.large,
   padding: "30px 20px 12px 20px",
   fontSize: "14px",
   fontWeight: "500",
@@ -76,12 +68,12 @@ export const MenuBox = styled(Box, {
   transition: "width 1s ease-in-out, height 1s ease-in-out",
 }));
 
-export const StyledLink = styled(Link)({
+export const StyledLink = styled(Link)(({ theme }) => ({
   color: "white",
   textDecoration: "none",
   fontSize: "14px",
   fontWeight: "500",
   "&:hover": {
-    color: "#374151",
+    color: theme.palette.neutral[700],
   },
-});
+}));

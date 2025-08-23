@@ -1,19 +1,15 @@
 import React, { useState } from "react";
 import { Send } from "@mui/icons-material";
-import {
-  Box,
-  CardContent,
-  Stack,
-  TextField,
-} from "@mui/material";
+import { Box, CardContent, Stack, TextField } from "@mui/material";
 import { motion } from "framer-motion";
 import {
   ContactForm,
   FormCard,
   StyledContainer,
-  StyledExperienceItem,
+  StyledForm,
   SubmitButton,
 } from "./styled";
+import SectionTitle from "../SectionTitle";
 
 const Form = () => {
   const [formData, setFormData] = useState({
@@ -81,62 +77,62 @@ const Form = () => {
 
   return (
     <>
-      <StyledContainer maxWidth="md" id="contact">
+      <StyledContainer id="contact">
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <StyledExperienceItem header="Send me your message">
-            <CardContent sx={{ p: 4 }} id="cardContent">
-              <Box onSubmit={handleSubmit}>
-                <Stack spacing={3}>
-                  <TextField
-                    fullWidth
-                    label="Name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                    variant="outlined"
-                  />
+          <SectionTitle title="Contact Me" />
+          <StyledForm>
+            <h1>Send me your message</h1>
+            <Box onSubmit={handleSubmit}>
+              <Stack spacing={3}>
+                <TextField
+                  fullWidth
+                  label="Name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                  variant="outlined"
+                />
 
-                  <TextField
-                    fullWidth
-                    label="Email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    variant="outlined"
-                  />
+                <TextField
+                  fullWidth
+                  label="Email"
+                  name="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                  variant="outlined"
+                />
 
-                  <TextField
-                    fullWidth
-                    label="Message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    required
-                    multiline
-                    rows={4}
-                    variant="outlined"
-                  />
+                <TextField
+                  fullWidth
+                  label="Message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  required
+                  multiline
+                  rows={4}
+                  variant="outlined"
+                />
 
-                  <SubmitButton
-                    type="submit"
-                    variant="contained"
-                    size="large"
-                    startIcon={<Send />}
-                  >
-                    Send Your Message
-                  </SubmitButton>
-                </Stack>
-              </Box>
-            </CardContent>
-          </StyledExperienceItem>
+                <SubmitButton
+                  type="submit"
+                  variant="contained"
+                  size="large"
+                  startIcon={<Send />}
+                >
+                  Send Your Message
+                </SubmitButton>
+              </Stack>
+            </Box>
+          </StyledForm>
         </motion.div>
       </StyledContainer>
       {/* <Snackbar
