@@ -17,6 +17,7 @@
     "@types/react-dom": "^19.1.6",
     "framer-motion": "^12.23.11",
     "material-ui-popup-state": "^5.3.6",
+    "pts": "^0.12.9",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-scripts": "^5.0.1",
@@ -25,10 +26,12 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-scripts --max_old_space_size=4096 start",
+    "build": "react-scripts --max_old_space_size=4096 build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "type-check": "npx tsc --noEmit --skipLibCheck",
+    "type-check:watch": "npm run type-check -- --watch"
   },
   "eslintConfig": {
     "extends": [
