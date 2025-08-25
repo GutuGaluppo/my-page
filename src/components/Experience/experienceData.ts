@@ -17,8 +17,8 @@ export const experiencesData: ExperienceProps[] = [
       "Resolved issues with responsive layouts to ensure optimal user experiences on all devices",
       "Executed comprehensive code maintenance and refactoring to elevate code quality and system efficiency",
     ],
-    techStack: ["React", "TypeScript", "RTK Query", "Next.js", "GraphQL"],
-    current: true,
+    techStack: ["React", "TypeScript", "RTK Query", "Material UI"],
+    current: false,
   },
   {
     id: 2,
@@ -33,7 +33,7 @@ export const experiencesData: ExperienceProps[] = [
       "Developed and implemented an email notification manager for timely user updates",
       "Designed and integrated engaging web animations to enhance the user experience",
     ],
-    techStack: ["React", "Node.js", "JavaScript", "CSS3", "Firebase"],
+    techStack: ["React", "TypeScript", "GraphQL", "CSS3", "Firebase"],
     current: false,
   },
   {

@@ -1,24 +1,25 @@
 import { Box, styled, Typography } from "@mui/material";
 import pattern from "../../assets/images/pattern04.svg";
 
-const BOX_HEIGHT = "530px";
+// Removed fixed height constant to allow flexible sizing
 
 export const StyledContainer = styled(Box)({
   position: "relative",
-  height: "100vh",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
   margin: "auto",
+  paddingBlock: "5vh",
+  minHeight: "100%",
 });
 
 export const StyledExperience = styled(Box)({
   display: "flex",
-  alignItems: "center",
+  alignItems: "baseline",
   justifyContent: "center",
   flexWrap: "wrap",
-  paddingTop: "60px",
+  paddingTop: "15vh",
   gap: "2rem",
 });
 
@@ -34,8 +35,8 @@ export const Border = styled(Box)<BorderProps>(
     top: "-15px",
     left: "-15px",
     width: "400px",
-    height: BOX_HEIGHT,
-    border: "2px solid grey",
+    height: "100%",
+    border: `2px solid ${theme.palette.divider}`,
     borderRadius: theme.borders.radius.small,
     zIndex: 10,
     "&::before": {
@@ -76,7 +77,8 @@ export const StyledExperienceCard = styled(Box)(({ theme }) => ({
   padding: "2rem",
   margin: "1rem",
   width: "400px",
-  height: BOX_HEIGHT,
+  minHeight: "530px",
+  height: "fit-content",
   background: theme.gradients.card,
   borderRadius: theme.borders.radius.small,
   "&::before": {
@@ -111,15 +113,47 @@ export const Logo = styled("img")(({ theme }) => ({
 export const StyledTitle = styled("h2")(({ theme }) => ({
   ...theme.typography.cardTitle,
   fontSize: "1.8rem",
+  color: theme.palette.text.primary,
 }));
 
 export const StyledLocationText = styled("p")(({ theme }) => ({
-  // fontFamily: "Instrument Serif",
   fontWeight: 300,
   fontStyle: "italic",
   fontSize: "1rem",
+  color: theme.palette.text.secondary,
 }));
 
 export const StyledDescription = styled("p")(({ theme }) => ({
   fontSize: "1rem",
+  color: theme.palette.text.primary,
+}));
+
+export const TechStackContainer = styled(Box)(({ theme }) => ({
+  position: "absolute",
+  bottom: "40px",
+  left: "2rem",
+  display: "flex",
+  flexWrap: "wrap",
+  gap: "8px",
+  maxWidth: "calc(100% - 7rem)", // Leave space for logo
+}));
+
+export const TechPill = styled(Box)(({ theme }) => ({
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  padding: "4px 12px",
+  backgroundColor: theme.palette.action.hover,
+  border: `1px solid ${theme.palette.divider}`,
+  borderRadius: "20px",
+  fontSize: "0.75rem",
+  fontWeight: "500",
+  color: theme.palette.text.primary,
+  backdropFilter: "blur(8px)",
+  transition: "all 0.3s ease-in-out",
+  "&:hover": {
+    backgroundColor: theme.palette.action.selected,
+    borderColor: theme.palette.primary.main,
+    transform: "translateY(-1px)",
+  },
 }));
