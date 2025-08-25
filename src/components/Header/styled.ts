@@ -12,7 +12,6 @@ export const StyledAppBar = styled(AppBar)(({ theme }) => ({
   backgroundColor: theme.palette.background.default,
   boxShadow: "none",
   position: "static",
-  padding: "10px 30px",
 }));
 
 export const StyledToolbar = styled(Toolbar)(({ theme }) => ({
@@ -20,12 +19,14 @@ export const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   justifyContent: "space-between",
   alignItems: "center",
   minHeight: "auto",
-  padding: 0,
-  color: theme.palette.neutral[800],
+  padding: "2px 30px",
+  backgroundColor: theme.palette.background.default,
+  color: theme.palette.text.primary,
 }));
 
 export const Logo = styled(Typography)(({ theme }) => ({
   ...theme.typography.logoMono,
+  color: theme.palette.text.primary,
   "&:hover": {
     cursor: "pointer",
     transform: "scale(1.1)",
@@ -37,14 +38,14 @@ export const MenuButton = styled(IconButton)(({ theme }) => ({
   position: "absolute",
   top: 0,
   right: 0,
-  backgroundColor: theme.palette.neutral[800],
-  color: "white",
+  backgroundColor: theme.palette.background.default,
+  color: theme.palette.background.default,
   borderRadius: theme.borders.radius.large,
   padding: "12px 20px",
   fontSize: "14px",
   fontWeight: "500",
   "&:hover": {
-    backgroundColor: theme.palette.neutral[700],
+    backgroundColor: theme.palette.text.secondary,
   },
 }));
 
@@ -56,8 +57,8 @@ export const MenuBox = styled(Box, {
   shouldForwardProp: (prop) => prop !== "isOpen",
 })<Props>(({ isOpen, theme }) => ({
   position: "relative",
-  backgroundColor: theme.palette.neutral[800],
-  color: "white",
+  backgroundColor: theme.palette.background.default,
+  color: theme.palette.background.default,
   borderRadius: theme.borders.radius.large,
   padding: "30px 20px 12px 20px",
   fontSize: "14px",
@@ -69,11 +70,11 @@ export const MenuBox = styled(Box, {
 }));
 
 export const StyledLink = styled(Link)(({ theme }) => ({
-  color: "white",
+  color: theme.palette.background.default,
   textDecoration: "none",
   fontSize: "14px",
   fontWeight: "500",
   "&:hover": {
-    color: theme.palette.neutral[700],
+    color: theme.palette.text.secondary,
   },
 }));

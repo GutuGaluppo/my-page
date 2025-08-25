@@ -40,7 +40,7 @@ export const BorderBox = styled(Box)<BoxProps>(({ isEven, theme }) => ({
     left: "5px",
     width: "600px",
     height: "350px",
-    border: "3px grey",
+    border: `3px ${theme.palette.divider}`,
     borderStyle: "double",
     zIndex: 10,
     borderRadius: theme.borders.radius.small,
@@ -89,14 +89,14 @@ export const QuoteCard = styled(Box)<BoxProps>(({ theme }) => ({
 
 export const QuoteTitle = styled(Typography)(({ theme }) => ({
   ...theme.typography.cardTitle,
-  color: theme.palette.neutral[800],
+  color: theme.palette.text.primary,
 }));
 
 export const QuoteCompany = styled(Typography)(({ theme }) => ({
   ...theme.typography.heroSubtitle,
   fontSize: "1.2rem",
   fontWeight: "600",
-  color: theme.palette.neutral[800],
+  color: theme.palette.text.primary,
   alignSelf: "flex-end",
 }));
 

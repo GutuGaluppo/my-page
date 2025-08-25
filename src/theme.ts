@@ -1,4 +1,4 @@
-import { createTheme, ThemeOptions } from "@mui/material/styles";
+import { createTheme, ThemeOptions, PaletteMode } from "@mui/material/styles";
 
 declare module "@mui/material/styles" {
   interface Palette {
@@ -92,92 +92,133 @@ declare module "@mui/material/Typography" {
   }
 }
 
-const themeOptions: ThemeOptions = {
-  typography: {
-    fontFamily:
-      '"Inter", "Instrument Serif", "Roboto", "Helvetica", "Arial", sans-serif',
-    logoMono: {
-      fontFamily: "Monofett",
-      fontWeight: 300,
-    },
-    heroTitle: {
-      fontFamily: "Bebas Neue",
-      fontStyle: "italic",
-      fontWeight: 100,
-      fontSize: "9vw",
-      lineHeight: 0.5,
-    },
-    heroSubtitle: {
-      fontFamily: "Instrument Serif",
-      fontSize: "1.8rem",
-      fontWeight: 100,
-      lineHeight: 1.1,
-    },
-    sectionTitle: {
-      fontWeight: 600,
-      fontSize: "12rem",
-      lineHeight: 0.8,
-    },
-    borderTitle: {
-      fontFamily: "Bebas Neue",
-      fontSize: "4rem",
-      lineHeight: 0.8,
-    },
-    cardTitle: {
-      fontFamily: "Bebas Neue",
-      fontSize: "1.5rem",
-      fontWeight: 600,
-    },
-    accent: {
-      fontFamily: "Courier New",
-      fontSize: "18px",
-      fontWeight: "bold",
-    },
+const baseTypography = {
+  fontFamily:
+    '"Inter", "Instrument Serif", "Roboto", "Helvetica", "Arial", sans-serif',
+  logoMono: {
+    fontFamily: "Monofett",
+    fontWeight: 300,
   },
-  palette: {
-    primary: {
-      main: "#3B82F6",
-    },
-    secondary: {
-      main: "#F59E0B",
-    },
+  heroTitle: {
+    fontFamily: "Bebas Neue",
+    fontStyle: "italic",
+    fontWeight: 100,
+    fontSize: "9vw",
+    lineHeight: 0.5,
+  },
+  heroSubtitle: {
+    fontFamily: "Instrument Serif",
+    fontSize: "1.8rem",
+    fontWeight: 100,
+    lineHeight: 1.1,
+  },
+  sectionTitle: {
+    fontWeight: 600,
+    fontSize: "12rem",
+    lineHeight: 0.8,
+  },
+  borderTitle: {
+    fontFamily: "Bebas Neue",
+    fontSize: "4rem",
+    lineHeight: 0.8,
+  },
+  cardTitle: {
+    fontFamily: "Bebas Neue",
+    fontSize: "1.5rem",
+    fontWeight: 600,
+  },
+  accent: {
+    fontFamily: "Courier New",
+    fontSize: "18px",
+    fontWeight: "bold",
+  },
+};
+
+const baseBorders = {
+  radius: {
+    small: "10px",
+    medium: "16px",
+    large: "25px",
+  },
+};
+
+const baseNeutral = {
+  50: "#f9fafb",
+  100: "#f3f4f6",
+  200: "#e5e7eb",
+  300: "#d1d5db",
+  400: "#9ca3af",
+  500: "#6b7280",
+  600: "#4b5563",
+  700: "#374151",
+  800: "#1f2937",
+  900: "#111827",
+};
+
+export const createAppTheme = (mode: PaletteMode) => {
+  const isLight = mode === "light";
+
+  const lightColors = {
     background: {
       default: "rgb(219, 219, 213)",
       paper: "#ffffff",
-    },
-    neutral: {
-      50: "#f9fafb",
-      100: "#f3f4f6",
-      200: "#e5e7eb",
-      300: "#d1d5db",
-      400: "#9ca3af",
-      500: "#6b7280",
-      600: "#4b5563",
-      700: "#374151",
-      800: "#1f2937",
-      900: "#111827",
     },
     text: {
       primary: "rgb(31,31,29)",
       secondary: "#6B7280",
     },
-    error: {
-      main: "rgb(255,81,46)",
+    gradients: {
+      card: "linear-gradient(135deg, #f0f0f0 80%, rgb(219, 219, 213) 100%)",
+      subtle: "linear-gradient(rgb(219, 219, 213) 65%, transparent 65%)",
     },
-  },
-  gradients: {
-    card: "linear-gradient(135deg, #f0f0f0 80%, rgb(219, 219, 213) 100%)",
-    subtle: "linear-gradient(rgb(219, 219, 213) 65%, transparent 65%)",
-  },
-  borders: {
-    radius: {
-      small: "10px",
-      medium: "16px",
-      large: "25px",
+  };
+
+  const darkColors = {
+    background: {
+      default: "rgb(31,31,29)",
+      paper: "rgb(30, 30, 30)",
     },
-  },
+    text: {
+      primary: "rgb(245, 245, 245)",
+      secondary: "#9CA3AF",
+    },
+    gradients: {
+      card: "linear-gradient(135deg, rgb(40, 40, 40) 80%, rgb(25, 25, 25) 100%)",
+      subtle: "linear-gradient(rgb(25, 25, 25) 65%, transparent 65%)",
+    },
+  };
+
+  const colors = isLight ? lightColors : darkColors;
+
+  const themeOptions: ThemeOptions = {
+    palette: {
+      mode,
+      primary: {
+        main: "#3B82F6",
+      },
+      secondary: {
+        main: "#F59E0B",
+      },
+      background: colors.background,
+      text: colors.text,
+      neutral: baseNeutral,
+      error: {
+        main: "rgb(255,81,46)",
+      },
+      divider: isLight ? "rgba(0, 0, 0, 0.12)" : "rgba(255, 255, 255, 0.12)",
+      action: {
+        hover: isLight ? "rgba(0, 0, 0, 0.04)" : "rgba(255, 255, 255, 0.08)",
+        selected: isLight ? "rgba(0, 0, 0, 0.08)" : "rgba(255, 255, 255, 0.16)",
+      },
+    },
+    typography: baseTypography,
+    gradients: colors.gradients,
+    borders: baseBorders,
+  };
+
+  return createTheme(themeOptions);
 };
 
-export const theme = createTheme(themeOptions);
-
+// Export default light theme for backward compatibility
+export const theme = createAppTheme("light");
 export default theme;

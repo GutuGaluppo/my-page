@@ -16,8 +16,8 @@ export const FloatingButton = styled(Box)<FloatingButtonProps>(
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: theme.palette.background.default,
-    border: "2px solid rgba(255, 255, 255, 0.7)",
+    backgroundColor: theme.palette.background.paper,
+    border: `2px solid ${theme.palette.divider}`,
     borderRadius: "30px",
     cursor: "pointer",
     transition: "all 0.3s ease-in-out",
@@ -26,13 +26,14 @@ export const FloatingButton = styled(Box)<FloatingButtonProps>(
     transform: isVisible ? "translateY(0)" : "translateY(20px)",
     zIndex: 1000,
     backdropFilter: "blur(15px)",
+    boxShadow: theme.shadows[4],
 
     "& svg": {
       fontSize: "24px",
       marginBottom: "4px",
       transition: "all 0.3s ease-in-out",
       animation: "bounce 3s infinite",
-      color: theme.palette.neutral[800],
+      color: theme.palette.text.primary,
     },
 
     "@keyframes bounce": {
@@ -48,10 +49,11 @@ export const FloatingButton = styled(Box)<FloatingButtonProps>(
     },
 
     "&:hover": {
-      backgroundColor: "rgba(255, 255, 255, 0.1)",
-      borderColor: "rgba(255, 255, 255, 0.9)",
+      backgroundColor: theme.palette.action.hover,
+      borderColor: theme.palette.primary.main,
       "& svg": {
         animation: "none",
+        transform: "translateY(-3px)",
       },
     },
   }),
@@ -62,5 +64,5 @@ export const ButtonText = styled(Typography)(({ theme }) => ({
   fontWeight: "600",
   textTransform: "uppercase",
   letterSpacing: "1px",
-  color: theme.palette.neutral[800],
+  color: theme.palette.text.primary,
 }));
