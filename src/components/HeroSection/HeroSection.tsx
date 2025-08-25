@@ -22,30 +22,32 @@ const codeString = `:{
 
 const HeroSection: React.FC = () => {
   return (
-    <HeroContainer maxWidth="lg" id="home">
-      <Box>
-        <Gutu variant="h1" data-outline="gutu">
-          gutu
-        </Gutu>
-        <Galuppo variant="h1" data-outline="galuppo">
-          galuppo
-        </Galuppo>
-        <PictureContainer>
-          <ProfileImage src={profilePic} alt="Solt - UI/UX Designer" />
-          <StyledImageText variant="h3">software engineer</StyledImageText>
-          <StyledPreTag>{codeString}</StyledPreTag>
-        </PictureContainer>
+    <>
+      <HeroContainer maxWidth="lg" id="home">
+        <Box>
+          <Gutu variant="h1" data-outline="gutu">
+            gutu
+          </Gutu>
+          <Galuppo variant="h1" data-outline="galuppo">
+            galuppo
+          </Galuppo>
+          <PictureContainer>
+            <ProfileImage src={profilePic} alt="Solt - UI/UX Designer" />
+            <StyledImageText variant="h3">software engineer</StyledImageText>
+            <StyledPreTag>{codeString}</StyledPreTag>
+          </PictureContainer>
 
-        <Subtitle>
-          Transforming simple mock-ups into semantic, responsive, reusable,
-          scalable, and high-performing applications.
-        </Subtitle>
-      </Box>
+          <Subtitle>
+            Transforming simple mock-ups into semantic, responsive, reusable,
+            scalable, and high-performing applications.
+          </Subtitle>
+        </Box>
 
-      <RightContent>
-        <SkillSphere widthVw={900} heightVh={600} />
-      </RightContent>
-    </HeroContainer>
+        <RightContent>
+          <SkillSphere />
+        </RightContent>
+      </HeroContainer>
+    </>
   );
 };
 
